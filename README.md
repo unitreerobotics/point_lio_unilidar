@@ -22,7 +22,7 @@ Demo is here:
 
 ![demo](./doc/demo.png)
 
-[Video](https://youtu.be/Wx0tLOLD5MY?si=-K_Ur64scCPw4-6G)
+[Demo Video](https://youtu.be/Wx0tLOLD5MY?si=-K_Ur64scCPw4-6G)
 
 ## Prerequisites
 
