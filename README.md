@@ -18,7 +18,11 @@ If you want to learn more about our lidar, you can refer to the official website
 - <https://github.com/hku-mars/Point-LIO>
 - [Point‐LIO: Robust High‐Bandwidth Light Detection and Ranging Inertial Odometry](https://onlinelibrary.wiley.com/doi/epdf/10.1002/aisy.202200459)
 
+Demo is here:
+
 ![demo](./doc/demo.png)
+
+[Video](https://youtu.be/Wx0tLOLD5MY?si=-K_Ur64scCPw4-6G)
 
 ## Prerequisites
 
