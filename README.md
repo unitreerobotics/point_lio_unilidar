@@ -20,8 +20,6 @@ If you want to learn more about our lidar, you can refer to the official website
 
 ![demo](./doc/demo.png)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Wx0tLOLD5MY?si=bqCV2zH71MG_iEYz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
 ## Prerequisites
 
 ### Ubuntu and ROS
