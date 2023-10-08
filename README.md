@@ -18,8 +18,11 @@ If you want to learn more about our lidar, you can refer to the official website
 - <https://github.com/hku-mars/Point-LIO>
 - [Point‐LIO: Robust High‐Bandwidth Light Detection and Ranging Inertial Odometry](https://onlinelibrary.wiley.com/doi/epdf/10.1002/aisy.202200459)
 
-
 ![demo](./doc/demo.png)
+
+## Video Demo
+
+[![Video](./doc/video.png)](https://youtu.be/Wx0tLOLD5MY?si=wZE6NGqLUGQdotzJ "SLAM based on Unitree 4D LiDAR L1")
 
 
 ## Prerequisites
@@ -65,7 +68,7 @@ cd catkin_point_lio_unilidar/src
 
 git clone https://github.com/unitreerobotics/point_lio_unilidar.git
 
-cd ../..
+cd ..
 
 catkin_make
 ```
@@ -112,7 +115,7 @@ pcl_viewer scans.pcd
 
 If you don't have our lidar for now, you can download our dataset recorded with our lidar and run testify this algorithm with it.
 The download address is here:
-- [unilidar-2023-09-22-12-42-04.bag - 百度云](https://pan.baidu.com/s/1PD0e9R5Q9gxHM966nurkDQ) --> 提取码: ge3c
+- [unilidar-2023-09-22-12-42-04.bag - Baidu Netdisk](https://pan.baidu.com/s/1PD0e9R5Q9gxHM966nurkDQ) --> Extraction Code (提取码): ge3c
 
 
 Run `Point-LIO`:
@@ -145,3 +148,6 @@ pcl_viewer scans.pcd
 ### v1.0.0 (2023.09.22)
 - Adapt `Point-LIO` for `Unitree Lidar L1`
 - Upload codes and dataset
+
+### v1.0.1 (2023.10.08)
+- Add video demo
