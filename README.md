@@ -22,7 +22,7 @@ If you want to learn more about our lidar, you can refer to the official website
 
 ## Video Demo
 
-[![Video](./doc/video.png)](https://youtu.be/Wx0tLOLD5MY?si=wZE6NGqLUGQdotzJ "SLAM based on Unitree 4D LiDAR L1")
+[![Video](./doc/video.png)](https://youtu.be/Wx0tLOLD5MY?si=EyNL3Dvhh5ci692k "SLAM based on Unitree 4D LiDAR L1")
 
 
 ## Prerequisites
