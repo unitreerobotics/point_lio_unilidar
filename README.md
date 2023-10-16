@@ -115,7 +115,7 @@ pcl_viewer scans.pcd
 
 If you don't have our lidar for now, you can download our dataset recorded with our lidar and run testify this algorithm with it.
 The download address is here:
-- [unilidar-2023-09-22-12-42-04.bag - Baidu Netdisk](https://pan.baidu.com/s/1PD0e9R5Q9gxHM966nurkDQ) --> Extraction Code (提取码): ge3c
+- [unilidar-2023-09-22-12-42-04.bag - Download](https://oss-global-cdn.unitree.com/static/unilidar-2023-09-22-12-42-04.zip)
 
 
 Run `Point-LIO`:
