@@ -88,7 +88,7 @@ cd unilidar_sdk/unitree_lidar_ros
 
 source devel/setup.bash
 
-roslaunch unitree_lidar_ros run.launch
+roslaunch unitree_lidar_ros run_without_rviz.launch
 ```
 
 Run `Point-LIO`:
@@ -151,3 +151,6 @@ pcl_viewer scans.pcd
 
 ### v1.0.1 (2023.10.08)
 - Add video demo
+
+### v1.0.2 (2023.11.03)
+- Update launch file in `README.md`
