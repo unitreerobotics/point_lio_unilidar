@@ -27,8 +27,10 @@ If you want to learn more about our lidar products, you can refer to the officia
 [![Video](./doc/video.png)](https://oss-global-cdn.unitree.com/static/c0bd0ac7d1e147e7a7eaf909f1fc214f.mp4 "SLAM based on Unitree 4D LiDAR L1")
 
 ### 2.2 L2 Lidar
+ 
+[![Video](./doc/l2-demo-video-bilibili.png)](https://www.bilibili.com/video/BV1XVUVYHEHR "SLAM based on Unitree 4D LiDAR L2")
 
-[![Video](./doc/l2-demo-video.png)](https://www.bilibili.com/video/BV1XVUVYHEHR "SLAM based on Unitree 4D LiDAR L2")
+[YouTube](https://youtu.be/juAfGrg2xBg?si=IVTWM9shEmHsKKJ_)
 
 
 ## 3. Prerequisites
