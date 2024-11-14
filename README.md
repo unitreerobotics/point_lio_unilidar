@@ -20,8 +20,6 @@ If you want to learn more about our lidar products, you can refer to the officia
 - <https://github.com/hku-mars/Point-LIO>
 - [Point‐LIO: Robust High‐Bandwidth Light Detection and Ranging Inertial Odometry](https://onlinelibrary.wiley.com/doi/epdf/10.1002/aisy.202200459)
 
-![demo](./doc/demo.png)
-
 ## 2. Video Demos
 
 ### 2.1 L1 Lidar
