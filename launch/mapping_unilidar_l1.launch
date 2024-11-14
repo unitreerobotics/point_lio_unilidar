@@ -4,7 +4,7 @@
 	<arg name="rviz" default="true" />
 
 	<node pkg="point_lio_unilidar" type="pointlio_mapping" name="laserMapping" output="screen">
-		<rosparam command="load" file="$(find point_lio_unilidar)/config/unilidar.yaml" />
+		<rosparam command="load" file="$(find point_lio_unilidar)/config/unilidar_l1.yaml" />
 		
 		<!--change to 1 to use IMU as input of Point-LIO-->
 		<param name="use_imu_as_input" type="bool" value="0"/>

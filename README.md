@@ -1,16 +1,18 @@
 # point_lio_unilidar
 
-## Introduction
+## 1. Introduction
 
-This repository adapts the state-of-the-art lidar inertial odometry algorithm, `Point-LIO`, for use with our lidar, `Unitree Lidar L1`.
+This repository adapts the state-of-the-art lidar inertial odometry algorithm, `Point-LIO`, for use with our lidar products:
+- `Unitree Lidar L1`
+- `Unitree Lidar L2`
 
-`Unitree Lidar L1` is a low-cost large-FOV 3D lidar, which possesses these features:
+Both `L1` and `L2` possess these features:
 - large field of view (360° × 90°)
 - non-repetitive scanning
-- low cost (only $349)
+- low cost
 - suitable for applications in low-speed mobile robots
 
-If you want to learn more about our lidar, you can refer to the official website for details.
+If you want to learn more about our lidar products, you can refer to the official website for details.
 - <https://m.unitree.com/en/LiDAR/>
 
 
@@ -20,14 +22,20 @@ If you want to learn more about our lidar, you can refer to the official website
 
 ![demo](./doc/demo.png)
 
-## Video Demo
+## 2. Video Demos
+
+### 2.1 L1 Lidar
 
 [![Video](./doc/video.png)](https://oss-global-cdn.unitree.com/static/c0bd0ac7d1e147e7a7eaf909f1fc214f.mp4 "SLAM based on Unitree 4D LiDAR L1")
 
+### 2.2 L2 Lidar
 
-## Prerequisites
+[![Video](./doc/l2-demo-video.png)](https://www.bilibili.com/video/BV1XVUVYHEHR "SLAM based on Unitree 4D LiDAR L2")
 
-### Ubuntu and ROS
+
+## 3. Prerequisites
+
+### 3.1 Ubuntu and ROS
 We tested our code on Ubuntu20.04 with [ROS noetic](http://wiki.ros.org/noetic/Installation/Ubuntu). Ubuntu18.04 and lower versions have problems of environments to support the Point-LIO, try to avoid using Point-LIO in those systems. 
 
 You can refer to the official website to install ROS noetic:
@@ -38,15 +46,15 @@ Additional ROS package is required:
 sudo apt-get install ros-xxx-pcl-conversions
 ```
 
-### Eigen
+### 3.2 Eigen
 Following the official [Eigen installation](eigen.tuxfamily.org/index.php?title=Main_Page), or directly install Eigen by:
 ```
 sudo apt-get install libeigen3-dev
 ```
 
-### unitree_lidar_ros
+### 3.3 unilidar_sdk
 
-You should download and build [unitree_lidar_ros](https://github.com/unitreerobotics/unilidar_sdk/tree/main/unitree_lidar_ros/src/unitree_lidar_ros) follwing these steps:
+For using lidar `L1`, you should download and build [unilidar_sdk](https://github.com/unitreerobotics/unilidar_sdk) follwing these steps:
 
 ```
 git clone https://github.com/unitreerobotics/unilidar_sdk.git
@@ -56,8 +64,19 @@ cd unilidar_sdk/unitree_lidar_ros
 catkin_make
 ```
 
+### 3.4 unilidar_sdk2
 
-## Build
+For using lidar `L2`, you should download and build [unilidar_sdk2](https://github.com/unitreerobotics/unilidar_sdk2) follwing these steps:
+
+```
+git clone https://github.com/unitreerobotics/unilidar_sdk2.git
+
+cd unilidar_sdk/unitree_lidar_ros
+
+catkin_make
+```
+
+## 4. Build
 
 Clone this repository and run `catkin_make`:
 
@@ -74,13 +93,11 @@ catkin_make
 ```
 
 
-## Run
+## 5. Run
 
-### Run with Unilidar
+### 5.1 Run with Unilidar L1
 
-Firstly, you should connect our lidar to your PC serial port, and supply power for the lidar with a 12V charger.
-
-Besides, to ensure proper initialization of the IMU, it is advisable to keep the lidar in a stationary state during the initial few seconds of algorithm execution.
+To ensure proper initialization of the IMU, it is advisable to keep the lidar in a stationary state during the initial few seconds of algorithm execution.
 
 Run `unilidar`:
 ```
@@ -97,7 +114,7 @@ cd catkin_unilidar_point_lio
 
 source devel/setup.bash
 
-roslaunch point_lio_unilidar mapping_unilidar.launch 
+roslaunch point_lio_unilidar mapping_unilidar_l1.launch 
 ```
 
 
@@ -111,7 +128,7 @@ You can use the `pcl_viewer` tool to view this pcd file:
 pcl_viewer scans.pcd 
 ```
 
-### Run with dataset
+### 5.2 Run with Unilidar L1 dataset
 
 If you don't have our lidar for now, you can download our dataset recorded with our lidar and run testify this algorithm with it.
 The download address is here:
@@ -124,7 +141,7 @@ cd catkin_point_lio_unilidar
 
 source devel/setup.bash
 
-roslaunch point_lio_unilidar mapping_unilidar.launch 
+roslaunch point_lio_unilidar mapping_unilidar_l1.launch 
 ```
 
 Play the dataset you downloaded:
@@ -143,14 +160,34 @@ You can use the `pcl_viewer` tool to view this pcd file:
 pcl_viewer scans.pcd 
 ```
 
-## Version History
+### 5.3 Run with Unilidar L2
 
-### v1.0.0 (2023.09.22)
-- Adapt `Point-LIO` for `Unitree Lidar L1`
-- Upload codes and dataset
+To ensure proper initialization of the IMU, it is advisable to keep the lidar in a stationary state during the initial few seconds of algorithm execution.
 
-### v1.0.1 (2023.10.08)
-- Add video demo
+Run `unilidar`:
+```
+cd unilidar_sdk/unitree_lidar_ros
 
-### v1.0.2 (2023.11.03)
-- Update launch file in `README.md`
+source devel/setup.bash
+
+roslaunch unitree_lidar_ros run_without_rviz.launch
+```
+
+Run `Point-LIO`:
+```
+cd catkin_unilidar_point_lio
+
+source devel/setup.bash
+
+roslaunch point_lio_unilidar mapping_unilidar_l2.launch 
+```
+
+After completion of the run, all cached pointcloud map will be saved to the following path:
+```
+catkin_point_lio_unilidar/src/point_lio_unilidar/PCD/scans.pcd
+```
+
+You can use the `pcl_viewer` tool to view this pcd file:
+```
+pcl_viewer scans.pcd 
+```
