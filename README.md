@@ -2,9 +2,11 @@
 
 ## 1. Introduction
 
+### 1.1 Unitree LiDAR
+
 This repository adapts the state-of-the-art lidar inertial odometry algorithm, `Point-LIO`, for use with our lidar products:
-- `Unitree Lidar L1`
-- `Unitree Lidar L2`
+- `Unitree LiDAR L1`
+- `Unitree LiDAR L2`
 
 Both `L1` and `L2` possess these features:
 - large field of view (360° × 90°)
@@ -13,20 +15,24 @@ Both `L1` and `L2` possess these features:
 - suitable for applications in low-speed mobile robots
 
 If you want to learn more about our lidar products, you can refer to the official website for details.
-- <https://m.unitree.com/en/LiDAR/>
+- <https://www.unitree.com/L2>
+- <https://www.unitree.com/LiDAR>
 
+
+### 1.2 Point-LIO
 
 `Point-LIO` is a robust and high-bandwidth lidar inertial odometry (LIO) with the capability to provide accurate, high-frequency odometry and reliable mapping under severe vibrations and aggressive motions. If you need further information about the `Point-LIO` algorithm, you can refer to their official website and paper:
 - <https://github.com/hku-mars/Point-LIO>
 - [Point‐LIO: Robust High‐Bandwidth Light Detection and Ranging Inertial Odometry](https://onlinelibrary.wiley.com/doi/epdf/10.1002/aisy.202200459)
 
+
 ## 2. Video Demos
 
-### 2.1 L1 Lidar
+### 2.1 L1 LiDAR
 
 [![Video](./doc/video.png)](https://oss-global-cdn.unitree.com/static/c0bd0ac7d1e147e7a7eaf909f1fc214f.mp4 "SLAM based on Unitree 4D LiDAR L1")
 
-### 2.2 L2 Lidar
+### 2.2 L2 LiDAR
  
 [![Video](./doc/l2-demo-video-bilibili.png)](https://www.bilibili.com/video/BV1XVUVYHEHR "SLAM based on Unitree 4D LiDAR L2")
 
@@ -95,7 +101,7 @@ catkin_make
 
 ## 5. Run
 
-### 5.1 Run with Unilidar L1
+### 5.1 Run with L1
 
 To ensure proper initialization of the IMU, it is advisable to keep the lidar in a stationary state during the initial few seconds of algorithm execution.
 
@@ -128,7 +134,7 @@ You can use the `pcl_viewer` tool to view this pcd file:
 pcl_viewer scans.pcd 
 ```
 
-### 5.2 Run with Unilidar L1 dataset
+### 5.2 Run with rosbag of L1
 
 If you don't have our lidar for now, you can download our dataset recorded with our lidar and run testify this algorithm with it.
 The download address is here:
@@ -160,7 +166,7 @@ You can use the `pcl_viewer` tool to view this pcd file:
 pcl_viewer scans.pcd 
 ```
 
-### 5.3 Run with Unilidar L2
+### 5.3 Run with L2
 
 To ensure proper initialization of the IMU, it is advisable to keep the lidar in a stationary state during the initial few seconds of algorithm execution.
 
@@ -185,6 +191,38 @@ roslaunch point_lio_unilidar mapping_unilidar_l2.launch
 After completion of the run, all cached pointcloud map will be saved to the following path:
 ```
 catkin_point_lio_unilidar/src/point_lio_unilidar/PCD/scans.pcd
+```
+
+You can use the `pcl_viewer` tool to view this pcd file:
+```
+pcl_viewer scans.pcd 
+```
+
+### 5.4 Run with rosbag of L2
+
+If you don't have our lidar for now, you can download our dataset recorded with our lidar and run testify this algorithm with it.
+The download address is here:
+- [L2 Indoor Point Cloud Data.bag - Download](https://oss-global-cdn.unitree.com/static/L2%20Indoor%20Point%20Cloud%20Data.bag)
+- [L2 Park Observed Point Cloud Data.bag - Download](https://oss-global-cdn.unitree.com/static/L2%20Park%20Point%20Cloud%20Data.bag)
+
+
+Run `Point-LIO`:
+```
+cd catkin_point_lio_unilidar
+
+source devel/setup.bash
+
+roslaunch point_lio_unilidar mapping_unilidar_l2.launch 
+```
+
+Play the dataset you downloaded:
+```
+rosbag play XXXXXX.bag 
+```
+
+After completion of the run, all cached pointcloud map will be saved to the following path:
+```
+catkin_point_lio_unilidar/src/point_lio_unilidarPCD/scans.pcd
 ```
 
 You can use the `pcl_viewer` tool to view this pcd file:
