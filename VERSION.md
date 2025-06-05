@@ -18,3 +18,6 @@
 - Add odometry topic
 - Modify topic names to unified routines.
 - Add download address for L2 rosbag files
+
+### v2.0.2 (2025.07.04)
+- Increase downsample size for L2 from 0.1m to 0.4m

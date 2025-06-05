@@ -15,8 +15,8 @@
 		<param name="point_filter_num" type="int" value="1"/> <!--4, 3-->
 
 		<param name="space_down_sample" type="bool" value="1" />
-		<param name="filter_size_surf" type="double" value="0.1" /> <!--0.5, 0.3, 0.2, 0.15, 0.1-->
-		<param name="filter_size_map" type="double" value="0.1" /> <!--0.5, 0.3, 0.15, 0.1-->
+		<param name="filter_size_surf" type="double" value="0.4" /> <!--0.5, 0.3, 0.2, 0.15, 0.1-->
+		<param name="filter_size_map" type="double" value="0.4" /> <!--0.5, 0.3, 0.15, 0.1-->
 		<param name="cube_side_length" type="double" value="1000" /> <!--2000-->
 		<param name="runtime_pos_log_enable" type="bool" value="0" /> <!--1-->
 	</node>
