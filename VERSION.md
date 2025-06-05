@@ -21,3 +21,4 @@
 
 ### v2.0.2 (2025.07.04)
 - Increase downsample size for L2 from 0.1m to 0.4m
+- Modify IMU period from 0.005s to 0.004s
